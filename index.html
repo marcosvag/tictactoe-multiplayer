@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body id="main-content"> 
+    <div class='container'>
+        <h1 class="title">Tic-tac-toe</h1>
+        <div class="menu-controls">
+            <button class="controls reset" id="reset">Reset</button>
+        </div>
+        <div class="points-container">
+            <div class="player-x players">Jogador X: <div class="points points-player-x"> 0 </div> pontos</div>
+            <div class="player-o players">Jogador O: <div class="points points-player-o"> 0 </div> pontos</div>
+        </div>
+        <div class="sub-container"> 
+            <svg height="416" width="416" class="win" id="048">
+                <line x1="0" y1="0" x2="416" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="246">
+                <line x1="0" y1="416" x2="416" y2="0" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="012">
+                <line x1="0" y1="69.3" x2="416" y2="69.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="345">
+                <line x1="0" y1="208.3" x2="416" y2="208.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="678">
+                <line x1="0" y1="347.3" x2="416" y2="347.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="036">
+                <line x1="69" y1="0" x2="69" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="147">
+                <line x1="208" y1="0" x2="208" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>
+            <svg height="416" width="416" class="win" id="258">
+                <line x1="350" y1="0" x2="350" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
+            </svg>     
+            <div class="hash">
+                <div class="items" id="0"></div>
+                <div class="items" id="1"></div>
+                <div class="items" id="2"></div>
+                <div class="items" id="3"></div>
+                <div class="items" id="4"></div>
+                <div class="items" id="5"></div>
+                <div class="items" id="6"></div>
+                <div class="items" id="7"></div>
+                <div class="items" id="8"></div>
+            </div>
+        </div>  
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>

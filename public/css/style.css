@@ -1,0 +1,95 @@
+html{
+    background-color: gainsboro;
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 0.05fr 0.05fr 0.05fr 0.6fr;
+    width: 100%;
+    height: 100%;
+}
+.title{
+    color:brown;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: flex;
+    justify-content: center;
+}
+.menu-controls{
+    display: flex;
+    justify-content: center;
+}
+.reset{
+    margin-right: 0.5rem;
+}
+.controls{
+    border-radius: 15px;
+    background-color: rgba(188, 143, 143, 0.3);
+    border-width: 0.3px;
+    border-color: brown;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.points-container{
+    color:rgb(31, 112, 112);
+}
+.player-o{
+    display: flex;
+    float: right;
+}
+.player-x{
+    display: flex;
+    float: left;
+}
+.points{
+    padding:  0 0.3rem 0 0.3rem;
+}
+.players{
+    font-weight: bolder;
+}
+.hash{
+    display: grid;
+    grid-template-columns: repeat(3, 8.5rem);
+    grid-template-rows: repeat(3, 8.5rem);
+    gap: 0.25rem;    
+    background-color: black;  
+    justify-content: center;
+    position: relative;
+}
+.items{
+    background-color: gainsboro;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Red Rose', cursive;
+    color: black;
+    font-size: 7.3rem; 
+}
+.items.chosen{
+    cursor: default;
+}
+
+.win{
+    display: none;
+    z-index: 2;    
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+}
+.active{
+    display:flex;
+}
