@@ -7,7 +7,6 @@ class TicTacToe{
         }
         this.currentPlayer = currentPlayer;
         this.win = ["012", "036", "048", "147", "246", "258", "345", "678"];
-        this.targetId;
     }
     reset () {
         this.players.x[1] = [0];
@@ -65,18 +64,24 @@ const game = new TicTacToe("x");
 
 document.getElementById("main-content").addEventListener("click", options);
 
+const user = document.querySelector('#main-content').dataset.id;
+const playerZero = document.querySelectorAll('.playersData')[0].dataset.id;
+const playerOne = document.querySelectorAll('.playersData')[1].dataset.id;
+const users = [playerZero, playerOne];
+const socketsList = [];
 var socket = io();
     
 function options(event) {
     if (!event.target.classList.contains("chosen") && event.target.classList.contains("items")) {
-        socket.emit('choice', event.target.id); 
-    } else if (event.target.id == "reset") {
-        game.reset();
+            const currentSocket = socket.id;
+            if(currentSocket != socketsList[socketsList.length - 1] && users.indexOf(user) >= 0) {
+                socket.emit('choice', event.target.id, currentSocket);
+            }
     }
 }   
 
-
-socket.on('choice', function(choice) {
+socket.on('choice', function(choice, socketChoice) {
+    socketsList.push(socketChoice)
     game.pickTile(choice)
     if (game.pickedTiles >= 5) {
         game.checkWin();
