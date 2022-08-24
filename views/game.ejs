@@ -41,9 +41,8 @@
             <%}%>
         </div>
     </div>
-    <% players.forEach((el) => {%>
-        <input type="hidden" class="playersData" name="" data-id="<%=el%>">    
-    <%})%>
+        <input type="hidden" class="playersData" name="" data-id="<%= players[0]%>">    
+        <input type="hidden" class="playersData" name="" data-id="<%= players[1]%>">    
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/game.js"></script>
