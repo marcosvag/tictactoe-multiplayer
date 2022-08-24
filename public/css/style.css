@@ -64,6 +64,7 @@ a {
 }
 button {
     background-color: #6495ed;
+    cursor: pointer;
 }
 .card input::placeholder{
     color: #161515;
