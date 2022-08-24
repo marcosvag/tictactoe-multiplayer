@@ -1,2 +1,13 @@
 <%- contentFor('body') %>
-<p>Enter a code here: </p> <input type="text"><button>Go to room</button><p>or</p><form action="/" method="POST"><button type="submit">Create Room</button></form>
+<%- include('./partials/_header') %>
+<div class="index card flex align-x align-y">
+<span>
+<input type="text" id="input-txt" placeholder="Enter game code here">
+<button id="input-btn">Go</button>
+</span>
+<p>OR</p>
+<form action="/" method="POST">
+    <button type="submit">New Game</button>
+</form>
+</div>
+<script src="/js/enterRoom.js"></script>

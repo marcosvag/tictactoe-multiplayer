@@ -1,95 +1,205 @@
-html{
-    background-color: gainsboro;
+html {
+    background-color: #d6dadd;
     width: 100%;
     height: 100%;
 }
-body{
-    width: 100%;
+body {
+    flex-direction: column;
     height: 100%;
     margin: 0;
+}
+.flex {
     display: flex;
-    align-items: center;
 }
-.container{
-    display: grid;
+.align-x {
     justify-content: center;
-    align-items: center;
-    grid-template-rows: 0.05fr 0.05fr 0.05fr 0.6fr;
-    width: 100%;
-    height: 100%;
 }
-.title{
-    color:brown;
+.align-y {
+    align-items: center;
+}
+.card {
+    flex-direction: column;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 6px #161515;
+}
+.login-container a {
+    color: #d6dadd;
+    padding: 10px;
+    background-color: rgb(224, 16, 16);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 3px #161515;
+}
+.login-container i {
+    margin-right: 5px;
+}
+nav {
+    position: absolute;
+    top: 0;
+    font-weight: 600;
+}
+.nav-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.logout {
+    margin-left: 15px
+}
+.card input, .card button {
+    padding: 16px;
+    border: none;
+    border-radius: 3px;
+    margin: 15px;
+    box-shadow: 0 0 3px #161515;
+}
+.card input {
+    background-color: #b8bfc5;
+}
+button {
+    background-color: #6495ed;
+}
+.card input::placeholder{
+    color: #161515;
+}
+.index.card span input {
+    margin-right: 0;
+}
+.index.card span button {
+    margin-left: 0;
+}
+.index p {
     margin-block-start: 0;
     margin-block-end: 0;
-    display: flex;
-    justify-content: center;
 }
-.menu-controls{
-    display: flex;
-    justify-content: center;
+.game-container {
+    flex-direction: column;
 }
-.reset{
-    margin-right: 0.5rem;
+.title {
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
-.controls{
-    border-radius: 15px;
-    background-color: rgba(188, 143, 143, 0.3);
-    border-width: 0.3px;
-    border-color: brown;
-    font-weight: bolder;
+.code-container {
+    margin: 5px 0 15px 0;
+}
+.code-container :last-child {
+    margin-left: 5px;
+}
+.room-code {
+    color: #6495ed;
+    font-weight: 600;
+}
+.copy-btn {
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
-.points-container{
-    color:rgb(31, 112, 112);
+.points-container {
+    color: rgb(31, 112, 112);
+    margin-bottom: 15px;
+    ;
 }
-.player-o{
-    display: flex;
-    float: right;
-}
-.player-x{
-    display: flex;
+.player-x {
     float: left;
 }
-.points{
-    padding:  0 0.3rem 0 0.3rem;
+.player-o {
+    float: right;
+    margin-left: 60px;
 }
-.players{
+.points {
+    padding: 0 0.3rem 0 0.3rem;
+}
+.players {
     font-weight: bolder;
 }
-.hash{
+.hash {
     display: grid;
     grid-template-columns: repeat(3, 8.5rem);
     grid-template-rows: repeat(3, 8.5rem);
-    gap: 0.25rem;    
-    background-color: black;  
-    justify-content: center;
+    gap: 0.25rem;
+    background-color: black;
     position: relative;
 }
-.items{
-    background-color: gainsboro;
+.items {
+    background-color: #d6dadd;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     cursor: pointer;
     font-family: 'Red Rose', cursive;
     color: black;
-    font-size: 7.3rem; 
+    font-size: 7.3rem;
 }
-.items.chosen{
+.items.chosen {
     cursor: default;
 }
-
-.win{
+.win {
     display: none;
-    z-index: 2;    
+    z-index: 2;
     position: absolute;
-    justify-content: center;
-    justify-items: center;
 }
-.active{
-    display:flex;
+.active {
+    display: flex;
+}
+.footer {
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14.4px;
+    height: 3.6rem;
+}
+.social {
+    height: 0.5rem;
+    width: 2rem;
+}
+.footer-text {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+@media (max-width: 416px) {
+    .hash {
+        grid-template-columns: repeat(3, 7.5rem);
+        grid-template-rows: repeat(3, 7.5rem);
+    }
+}
+@media (max-width: 368px) {
+    .hash {
+        grid-template-columns: repeat(3, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+    }
+}
+@media (max-width: 280px) {
+    .code-container {
+        flex-direction: column;
+    }
+    .code-container p {
+        margin-bottom: 5px;
+    }
+    .points-container {
+        flex-direction: column;
+    }
+    .players {
+        float: none;
+    }
+    .player-o {
+        margin: 0;
+    }
+    .hash {
+        grid-template-columns: repeat(3, 5.5rem);
+        grid-template-rows: repeat(3, 5.5rem);
+    }
+}
+@media (max-height: 570px) {
+    nav {
+        position: unset;
+        margin-bottom: 15px;
+    }
 }

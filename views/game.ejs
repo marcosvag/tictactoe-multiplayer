@@ -1,50 +1,50 @@
 <%- contentFor('body') %>
-<div class='container'>
-    <h1 class="title">Tic-tac-toe</h1>
-    <div class="menu-controls">
-        <button class="controls reset" id="reset">Reset</button>
+<%- include('./partials/_header') %>
+<div id="main-content" class='game-container flex align-x align-y' data-id="<%= user %>">
+    <h1 class="title">Tic-tac-toe Multiplayer</h1>
+    <div class="code-container flex align-y">
+        <p>Game code: <span id="room-code" class="room-code"><%= room%></span></p>
+        <button id="copy-code-btn" class="copy-btn">Copy</button>
     </div>
     <div class="points-container">
-        <div class="player-x players">Jogador X: <div class="points points-player-x"> 0 </div> pontos</div>
-        <div class="player-o players">Jogador O: <div class="points points-player-o"> 0 </div> pontos</div>
+        <div class="player-x players flex">Player X: <div class="points points-player-x"> 0 </div> points</div>
+        <div class="player-o players flex">Player O: <div class="points points-player-o"> 0 </div> points</div>
     </div>
     <div class="sub-container"> 
-        <svg height="416" width="416" class="win" id="048">
+        <svg height="416" width="416" class="win align-x align-y" id="048">
             <line x1="0" y1="0" x2="416" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="246">
+        <svg height="416" width="416" class="win align-x align-y" id="246">
             <line x1="0" y1="416" x2="416" y2="0" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="012">
+        <svg height="416" width="416" class="win align-x align-y" id="012">
             <line x1="0" y1="69.3" x2="416" y2="69.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="345">
+        <svg height="416" width="416" class="win align-x align-y" id="345">
             <line x1="0" y1="208.3" x2="416" y2="208.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="678">
+        <svg height="416" width="416" class="win align-x align-y" id="678">
             <line x1="0" y1="347.3" x2="416" y2="347.3" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="036">
+        <svg height="416" width="416" class="win align-x align-y" id="036">
             <line x1="69" y1="0" x2="69" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="147">
+        <svg height="416" width="416" class="win align-x align-y" id="147">
             <line x1="208" y1="0" x2="208" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>
-        <svg height="416" width="416" class="win" id="258">
+        <svg height="416" width="416" class="win align-x align-y" id="258">
             <line x1="350" y1="0" x2="350" y2="416" style="stroke:rgb(8, 112, 177);stroke-width:4"/>
         </svg>     
         <div class="hash">
-            <div class="items" id="0"></div>
-            <div class="items" id="1"></div>
-            <div class="items" id="2"></div>
-            <div class="items" id="3"></div>
-            <div class="items" id="4"></div>
-            <div class="items" id="5"></div>
-            <div class="items" id="6"></div>
-            <div class="items" id="7"></div>
-            <div class="items" id="8"></div>
+            <% for(let e = 0; e < 9; e++) {%>
+                <div class="items flex align-x align-y" id="<%= e %>"></div>
+            <%}%>
         </div>
-    </div>  
+    </div>
+    <% players.forEach((el) => {%>
+        <input type="hidden" class="playersData" name="" data-id="<%=el%>">    
+    <%})%>
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/game.js"></script>
+<script src="/js/copyCode.js"></script>
