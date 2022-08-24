@@ -5,6 +5,11 @@ const RoomSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    players: {
+        type: Array,
+        required: true,
+        default: [],
+    },
     status: {
         type: Boolean,
         required: true,
