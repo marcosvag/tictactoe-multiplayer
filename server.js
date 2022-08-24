@@ -32,13 +32,12 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('choice', (msg) => {
-        io.emit('choice', msg);
-        console.log(msg);
+    console.log('a user connected: ', socket.id);
+    socket.on('choice', (choice, socketChoice) => {
+        io.emit('choice', choice, socketChoice);
     })
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log('user disconnected: ', socket.id);
     })
 });
 
